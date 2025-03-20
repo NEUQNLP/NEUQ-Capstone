@@ -1,0 +1,8 @@
+%目录样式
+% \renewcommand{\cftdot}{\ensuremath{\ast}}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\newcommand\mydot[1]{\scalebox{#1}{.}}
+\renewcommand\cftdot{\mydot{0.8}}
+\renewcommand\cftdotsep{1}
+% \CTEXoptions[contentsname={\zihao{-4}目录}]
+\tableofcontents

@@ -1,0 +1,122 @@
+%!TEX program = xelatex
+\documentclass[cs4size,punct]{ctexart}
+\usepackage{titling}
+\usepackage[a4paper, left=30mm, right=20mm, top=35mm, bottom=25mm, headheight=20pt]{geometry}
+\usepackage{fancyhdr, graphicx, xpatch, layout}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{pdfpages}
+\usepackage{float}
+% \usepackage{cite}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{chngcntr}
+\usepackage{listings}
+\usepackage{cleveref}
+\usepackage[titles]{tocloft}
+\usepackage[labelsep=space]{caption}
+\usepackage[square, numbers, sort, comma]{natbib}
+\usepackage{lmodern}
+\usepackage{indentfirst}
+\usepackage{xcolor} 
+% 参考文献行间距
+\setlength{\bibsep}{-1pt}
+
+%设置字体
+\setmainfont{Times New Roman} % set all eng font
+\songti
+\zihao{-4}
+\CTEXsetup[format+={\mdseries\zihao{3}\heiti}]{section}
+\CTEXsetup[format+={\mdseries\zihao{-4}\heiti}]{subsection}
+\CTEXsetup[format+={\mdseries\zihao{-4}\heiti}]{subsubsection}
+
+%设置间距
+\linespread{1.6}
+\titlespacing{\section}{0bp}{0.5em}{0.5em}
+\titlespacing{\subsection}{0bp}{0.5em}{0.5em}
+\titlespacing{\subsubsection}{0.5bp}{0.5em}{0.5em}
+
+
+% 图表每章重新编号
+\counterwithin{table}{section}
+\counterwithin{figure}{section}
+
+%列表样式
+\setlist[enumerate,1]{label=\arabic*、, wide, labelsep=-0.3em, itemsep=-0.2ex, topsep=0pt, partopsep=0pt, parsep=0pt}
+\setlist[enumerate,2]{label=（\arabic*）\ , wide, labelsep=0em, itemsep=0ex, topsep=0pt, partopsep=0pt, parsep=0pt}
+
+\pagenumbering{Roman} %目录页码为罗马数字
+%页眉
+\pagestyle{fancy}
+% \lhead{	\setlength{\unitlength}{1mm}
+%         \begin{picture}(0,0)
+%         \put(0,0){\includegraphics[height=1.7cm]{images/logo.pdf}}
+%         \end{picture}
+% }
+
+\chead{\zihao{-4}\heiti  东北大学秦皇岛分校本科生毕业设计（论文）}
+% \bfseries
+
+\cfoot{\thepage}
+\lhead{}
+\rhead{}
+\renewcommand{\headrulewidth}{0.4pt}
+%%页眉
+
+%% lstlisting 样式
+\def\inline{\lstinline[basicstyle=\ttfamily,breaklines=true]}
+\lstset{
+	basicstyle=\ttfamily\zihao{5},
+	xleftmargin=2em,
+    breaklines=true,
+    frame={tb},
+    belowcaptionskip=1em
+}
+
+%自定义命令
+\newcommand{\scite}[1]{\textsuperscript{\cite{#1}}} %cite样式
+
+\DeclareCaptionFormat{myformat}{\zihao{5}\selectfont#1#2#3}
+\captionsetup{format=myformat}
+
+\begin{document}
+
+%引用样式
+\counterwithin{lstlisting}{section}
+\renewcommand{\lstlistingname}{代码清单}
+\crefname{listing}{代码清单}{代码清单}
+\Crefname{listing}{代码清单}{代码清单}
+\crefname{table}{表}{表}
+\Crefname{table}{表}{表}
+\crefname{figure}{图}{图}
+\Crefname{figure}{图}{图}
+
+\include{sections/cover-1}
+\include{sections/cover-2}
+
+\include{sections/abstract}
+
+\include{sections/toc}
+
+\pagenumbering{arabic} %正文页码为阿拉伯数字
+\include{sections/introduction}
+\include{sections/backgroundKnowledge}
+\include{sections/demandAnalysis}
+\include{sections/integratedDesign}
+\include{sections/detailedDesign}
+\include{sections/deployTest}
+\include{sections/conclusion}
+\include{sections/thanks}
+
+% \bibliographystyle{IEEEtran}
+\bibliographystyle{gbt7714-2005}
+% \bibliographystyle{thu}
+% \bibliographystyle{cqu}
+\nocite{*}
+\addcontentsline{toc}{section}{参考文献}
+\bibliography{citation}
+% \setlength{\bibsep}{0pt plus 0.5em}
+
+\include{sections/appendix}
+\end{document}
