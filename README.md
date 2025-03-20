@@ -1,6 +1,6 @@
 
 # LaTex模板
-[东北大学秦皇岛分校](http://www.neuq.edu.cn/) 本科毕业论文 [LaTex](https://www.latex-project.org/) 模板，模板来自一位学长 `coffin`，在完成毕业论文的过程中，深刻体验到 LaTex 排版的干净整洁，以及修改格式的方便快捷，特此分享出来。
+[东北大学秦皇岛分校](http://www.neuq.edu.cn/) 本科毕业论文 [LaTex](https://www.latex-project.org/) 模板，模板来自一位学长 `coffin` 和语言与智能系统实验室成员，在完成毕业论文的过程中，深刻体验到 LaTex 排版的干净整洁，以及修改格式的方便快捷，特此分享出来。
 
 <!-- more -->
 
@@ -26,11 +26,11 @@ LaTeX， 是一种基于TEX的排版系统，由美国电脑学家莱斯利·兰
 
 #### LaTex环境
 
-> 基于 macOS 系统，其它系统请自行寻找编辑器，配置环境
+Overleaf 直接import from Github即可
 
-编辑器：[Texpad](https://www.texpad.com/)
+编辑器请选择 Xelatex
 
-Tex发行版：[MacTeX-2017](https://www.tug.org/mactex/mactex-download.html)
+
 
 
 
